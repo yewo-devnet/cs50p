@@ -10,7 +10,7 @@ def main():
     elif n <= 1:
         print("Too few command-line arguments")
         sys.exit()
-    elif "py" == sys.argv[1].rsplit('.'):
+    elif sys.argv[1].rsplit('.') == "py":
         print("Not a python file")
         sys.exit()
 
@@ -19,13 +19,14 @@ def main():
     try:
         with open(f"{sys.argv[1]}", "r") as file:
             for line in file:
-                if line.startswith('#') or line == "":
-                    continue
-                count+1
+                count = count + 1
+                if line.startswith('#') or line.strip() == "":
+                    count = count - 1
+                
             print(f"Lines of Code = {count}")
     except Exception as e:
         print(e)
-        print("File not found")
+        print("File does not exist")
 
 if __name__ == "__main__" :
     main()
