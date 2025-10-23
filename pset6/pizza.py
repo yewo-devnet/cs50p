@@ -13,9 +13,6 @@ def main():
         print("Not a csv file")
         sys.exit()
 
-    
-
-
     try:
         pass
         #open the csv file 
