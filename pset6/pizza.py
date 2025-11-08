@@ -9,9 +9,11 @@ def main():
     elif n <= 1:
         print("Too few command-line arguments")
         sys.exit()
-    elif sys.argv[1].rsplit('.') == "csv":
-        print("Not a csv file")
-        sys.exit()
+    else:
+        _ , x = sys.argv[1].rsplit('.') 
+        if x != "csv":
+            print("Not a csv file")
+            sys.exit()
 
     try:
         pass
