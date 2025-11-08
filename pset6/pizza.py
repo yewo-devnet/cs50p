@@ -1,7 +1,11 @@
 import sys
+import csv
+import tabulate
 
 def main():
     n = len(sys.argv)
+    table = []
+
 
     if n > 2:
         print("Too many command arguments")
@@ -16,7 +20,16 @@ def main():
             sys.exit()
 
     try:
-        pass
+        with open("x" , "r") as file:
+            reader = csv.reader(file)
+            print(reader)
+
+            # for row in reader:
+            #     list1.append(row[0])
+            #     list2.append(row[1])
+            #     list3.append(row[2])
+
+
         #open the csv file 
         #format the table using grid format 
     except Exception as e:
